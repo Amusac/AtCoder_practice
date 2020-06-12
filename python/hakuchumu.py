@@ -35,24 +35,6 @@ if __name__ == "__main__":
 
 def resolve():
     s = input()
-    l = len(s)
-    count = 0
-    while True:
-        if s[-5 - count:-count if count !=
-             0 else None] == "dream" or s[-5 - count:-count if count !=
-                                          0 else None] == "erase":
-            count += 5
-        elif s[-6 - count:-count if count !=
-               0 else None] == "eraser":
-            count += 6
-        elif s[-7 - count:-count if count !=
-               0 else None] == "dreamer":
-            count += 7
-        else:
-            break
-        if count == l:
-            break
-    if count == l:
-        print("YES")
-    else:
-        print("NO")
+    print('NO' if s.replace('eraser', '.').replace('erase', '.')\
+        .replace('dreamer', '.').replace('dream', '.')\
+        .replace('.', '') else 'YES')
